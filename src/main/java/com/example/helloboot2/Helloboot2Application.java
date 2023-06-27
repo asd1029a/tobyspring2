@@ -1,5 +1,6 @@
 package com.example.helloboot2;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.server.WebServer;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
@@ -40,7 +41,7 @@ public class Helloboot2Application {
 
     public static void main(String[] args) {
 
-        MySpringApplication.run(Helloboot2Application.class, args);
+        SpringApplication.run(Helloboot2Application.class, args);
 
     }
 
