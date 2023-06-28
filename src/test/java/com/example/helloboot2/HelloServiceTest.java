@@ -3,6 +3,11 @@ package com.example.helloboot2;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
 /**
  * HelloServiceTest.java
  * Class 설명을 작성하세요.
@@ -10,9 +15,24 @@ import org.junit.jupiter.api.Test;
  * @author kjm
  * @since 2023.06.28
  */
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+@UnitTest
+@interface FastTest {
+
+}
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE})
+@Test
+@interface UnitTest {
+
+}
+
 public class HelloServiceTest {
 
-    @Test
+    @UnitTest
     void simpleHelloService() {
         SimpleHelloService helloService = new SimpleHelloService();
 
