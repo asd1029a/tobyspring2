@@ -2,3 +2,4 @@ com.example.config.autoconfig.TomcatWebServerConfig
 com.example.config.autoconfig.DispatcherServletConfig
 com.example.config.autoconfig.PropertyPlaceHolderConfig
 com.example.config.autoconfig.PropertyPostPrecessorConfig
+com.example.config.autoconfig.DataSourceConfig
