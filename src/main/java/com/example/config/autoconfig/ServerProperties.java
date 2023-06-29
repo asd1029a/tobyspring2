@@ -1,6 +1,7 @@
 package com.example.config.autoconfig;
 
-import org.springframework.beans.factory.annotation.Value;
+import com.example.config.MyConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 /**
  * ServerProperties.java
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
  * @author kjm
  * @since 2023.06.29
  */
+@MyConfigurationProperties(prefix = "server")
 public class ServerProperties {
 
     private String contextPath;
