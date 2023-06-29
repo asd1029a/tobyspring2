@@ -1,5 +1,6 @@
 package com.example.config.autoconfig;
 
+import com.example.config.ConditionalMyOnClass;
 import com.example.config.MyAutoConfiguration;
 import org.springframework.boot.web.embedded.jetty.JettyServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
@@ -8,6 +9,7 @@ import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.core.type.AnnotatedTypeMetadata;
+import org.springframework.util.ClassUtils;
 
 /**
  * TomcatWebServerConfig.java
@@ -17,7 +19,7 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
  * @since 2023.06.28
  */
 @MyAutoConfiguration
-@Conditional({JettyWebServerConfig.JettyCondition.class})
+@ConditionalMyOnClass("org.eclipse.jetty.server.Server")
 public class JettyWebServerConfig {
 
     @Bean("jettyWebServerFactory")
@@ -26,11 +28,4 @@ public class JettyWebServerConfig {
         return new JettyServletWebServerFactory();
     }
 
-    static class JettyCondition implements Condition {
-
-        @Override
-        public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
-            return false;
-        }
-    }
 }
