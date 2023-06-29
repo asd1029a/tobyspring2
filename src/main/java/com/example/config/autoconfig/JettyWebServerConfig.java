@@ -19,15 +19,15 @@ import org.springframework.util.ClassUtils;
  * @author kjm
  * @since 2023.06.28
  */
-@MyAutoConfiguration
-@ConditionalMyOnClass("org.eclipse.jetty.server.Server")
-public class JettyWebServerConfig {
-
-    @Bean("jettyWebServerFactory")
-    @ConditionalOnMissingBean
-    public ServletWebServerFactory servletWebServerFactory() {
-
-        return new JettyServletWebServerFactory();
-    }
-
-}
+//@MyAutoConfiguration
+//@ConditionalMyOnClass("org.eclipse.jetty.server.Server")
+//public class JettyWebServerConfig {
+//
+//    @Bean("jettyWebServerFactory")
+//    @ConditionalOnMissingBean
+//    public ServletWebServerFactory servletWebServerFactory() {
+//
+//        return new JettyServletWebServerFactory();
+//    }
+//
+//}
