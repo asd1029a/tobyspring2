@@ -10,16 +10,10 @@ package com.example.helloboot2;
 @MyComponent
 public class SimpleHelloService implements HelloService {
 
-    private final HelloRepository helloRepository;
-
-    public SimpleHelloService(HelloRepository helloRepository) {
-        this.helloRepository = helloRepository;
-    }
 
     @Override
     public String sayHello(String name) {
 
-        helloRepository.increaseCount(name);
         return String.format("Hello %s", name);
     }
 }

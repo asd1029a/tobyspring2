@@ -1,15 +1,8 @@
 package com.example.study;
 
-import com.example.helloboot2.HelloBootTest;
-import com.example.helloboot2.Helloboot2Application;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -22,7 +15,7 @@ import java.sql.SQLException;
  * @author kjm
  * @since 2023.06.29
  */
-@HelloBootTest
+@JdbcTest
 public class DataSourceTest {
     @Autowired
     DataSource dataSource;

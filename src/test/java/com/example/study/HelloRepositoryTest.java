@@ -1,11 +1,11 @@
 package com.example.study;
 
-import com.example.helloboot2.HelloBootTest;
 import com.example.helloboot2.HelloRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
@@ -15,7 +15,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
  * @author kjm
  * @since 2023.06.30
  */
-@HelloBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 public class HelloRepositoryTest {
 
     @Autowired
