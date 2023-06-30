@@ -34,7 +34,7 @@ public class HelloServiceTest {
 
     @UnitTest
     void simpleHelloService() {
-        SimpleHelloService helloService = new SimpleHelloService();
+        SimpleHelloService helloService = new SimpleHelloService(helloRepository);
 
         String ret = helloService.sayHello("Test");
 
